@@ -23,7 +23,7 @@ module.exports = (siteRoot, options) => {
     appId: process.env.APP_ID || 'appId',
     masterKey: process.env.MASTER_KEY || 'masterKey',
     databaseURI: process.env.DATABASE_URI || 'mongodb://localhost:27017/dev',
-    serverURL: (process.env.SERVER_URL || 'http://localhost:1337') + '/parse',
+    serverURL: (process.env.SERVER_URL || 'http://localhost:1337') + (process.env.PARSE_SERVER_MOUNT_PATH || '/parse'),
     cloud: siteRoot + '/cloud/main.js',
     logFolder: siteRoot + '/logs',
     filesAdapter: () => {
